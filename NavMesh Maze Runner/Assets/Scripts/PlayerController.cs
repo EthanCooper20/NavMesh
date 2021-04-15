@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.AI;
 using UnityStandardAssets.Characters.ThirdPerson;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -10,10 +11,15 @@ public class PlayerController : MonoBehaviour
 
     public ThirdPersonCharacter character;
 
+    public Text scoreText;
+    public int count = 0;
+    public Text winText;
+
     void Start()
     {
         cam = Camera.main;
         agent.updateRotation = false;
+
     }
    
     // Update is called once per frame
@@ -37,6 +43,24 @@ public class PlayerController : MonoBehaviour
         else
         {
             character.Move(Vector3.zero, false, false);
+        }
+
+     
+
+        }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Prize")
+        {
+            other.gameObject.SetActive(false);
+            count += 10;
+            scoreText.text = "Score: " + count;
+            if (count >= 40)
+            {
+                winText.gameObject.SetActive(true);
+            }
+
         }
     }
 
