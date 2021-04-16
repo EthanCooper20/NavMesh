@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3789838573060473766}
   - component: {fileID: 3789838573060473761}
   m_Layer: 8
-  m_Name: Player
+  m_Name: Player 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -134,3 +134,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 0}
   agent: {fileID: 3789838573060473766}
+  character: {fileID: 0}
+  health: 0
+  scoreText: {fileID: 0}
+  count: 0
+  winText: {fileID: 0}

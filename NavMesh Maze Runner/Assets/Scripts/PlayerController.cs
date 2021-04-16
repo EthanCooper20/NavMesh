@@ -11,6 +11,8 @@ public class PlayerController : MonoBehaviour
 
     public ThirdPersonCharacter character;
 
+    public int health;
+
     public Text scoreText;
     public int count = 0;
     public Text winText;
@@ -19,6 +21,7 @@ public class PlayerController : MonoBehaviour
     {
         cam = Camera.main;
         agent.updateRotation = false;
+
 
     }
    
@@ -56,12 +59,16 @@ public class PlayerController : MonoBehaviour
             other.gameObject.SetActive(false);
             count += 10;
             scoreText.text = "Score: " + count;
+        }
+      
+
             if (count >= 40)
             {
                 winText.gameObject.SetActive(true);
             }
 
-        }
-    }
 
-}
+        }
+
+
+    }
